@@ -1,10 +1,9 @@
 import { Box, Flex } from "@chakra-ui/react";
 import Layout from "components/Layout";
 import DataColumn from "../components/DataColumn";
-import Finder from "../components/Finder";
 import LinksColumn from "../components/LinksColumn";
 import News from "../components/News";
-import Phases from "../components/Phases";
+import SearchResult from "../components/SearchResult";
 
 const Dashboard: React.FC = () => {
   return (
@@ -14,8 +13,7 @@ const Dashboard: React.FC = () => {
 
         <Box bg="bg.dark" flexGrow={1} flexShrink={1} py="14" px="12" as="main">
           <News />
-          <Finder />
-          <Phases />
+          <SearchResult />
         </Box>
 
         <LinksColumn />

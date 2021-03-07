@@ -5,7 +5,11 @@ import React from "react";
 import getPlaces from "../services/getPlaces";
 import { useQuery } from "react-query";
 
-const Finder: React.FC = () => {
+interface IProps {
+  setSearch: (searchId: string) => void;
+}
+
+const Finder: React.FC<IProps> = ({ setSearch }) => {
   const { data: places, isLoading } = useQuery("places", getPlaces);
 
   return (
@@ -18,6 +22,7 @@ const Finder: React.FC = () => {
         <Skeleton w="full" height="50px" />
       ) : (
         <Select
+          isClearable
           styles={{
             control: (base) => ({
               ...base,
@@ -36,7 +41,7 @@ const Finder: React.FC = () => {
             },
           })}
           options={places}
-          onInputChange={(val) => console.log(val)}
+          onChange={(option) => setSearch(option?.value || null)}
           placeholder="Todo el Perú"
         />
       )}
