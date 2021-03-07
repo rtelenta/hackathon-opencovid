@@ -2,9 +2,9 @@ import SemiCircleProgressBar from "react-progressbar-semicircle";
 import styled from "@emotion/styled";
 import { Box, Text } from "@chakra-ui/layout";
 
-const SemiCircleWrapper = styled.div`
+const SemiCircleWrapper = styled.div<{ percentage: number }>`
   circle {
-    stroke-linecap: round;
+    stroke-linecap: ${(props) => (props.percentage > 5 ? "round" : "initial")};
   }
 `;
 
@@ -15,15 +15,17 @@ interface IProps {
 
 const SemiCirclePhases: React.FC<IProps> = ({ dosis1, dosis2 }) => {
   return (
-    <SemiCircleWrapper>
+    <Box>
       <Box pos="relative">
-        <SemiCircleProgressBar
-          percentage={dosis1}
-          background="#EDF2F7"
-          strokeWidth={16}
-          stroke="#0BC5EA"
-          diameter={150}
-        />
+        <SemiCircleWrapper percentage={dosis1}>
+          <SemiCircleProgressBar
+            percentage={dosis1}
+            background="#EDF2F7"
+            strokeWidth={16}
+            stroke="#0BC5EA"
+            diameter={150}
+          />
+        </SemiCircleWrapper>
         <Box
           pos="absolute"
           textAlign="center"
@@ -51,15 +53,17 @@ const SemiCirclePhases: React.FC<IProps> = ({ dosis1, dosis2 }) => {
         />
       </Box>
       <Box pos="relative">
-        <SemiCircleProgressBar
-          percentage={dosis2}
-          background="#EDF2F7"
-          orientation="down"
-          direction="left"
-          strokeWidth={16}
-          stroke="#48BB78"
-          diameter={150}
-        />
+        <SemiCircleWrapper percentage={dosis2}>
+          <SemiCircleProgressBar
+            percentage={dosis2}
+            background="#EDF2F7"
+            orientation="down"
+            direction="left"
+            strokeWidth={16}
+            stroke="#48BB78"
+            diameter={150}
+          />
+        </SemiCircleWrapper>
         <Box
           pos="absolute"
           textAlign="center"
@@ -76,7 +80,7 @@ const SemiCirclePhases: React.FC<IProps> = ({ dosis1, dosis2 }) => {
           </Text>
         </Box>
       </Box>
-    </SemiCircleWrapper>
+    </Box>
   );
 };
 

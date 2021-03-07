@@ -42,7 +42,7 @@ const Header: React.FC = () => {
               Comparte
             </Text>
             <Text fontWeight="light" fontSize="sm">
-              nuestra información
+              lo bueno
             </Text>
           </Box>
         </HStack>

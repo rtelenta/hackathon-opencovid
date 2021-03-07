@@ -126,9 +126,6 @@ const Phases: React.FC<IProps> = ({ search }) => {
                         {tag}
                       </BadgeIcon>
                     ))}
-                    <BadgeIcon>Comunidades Indígenas o nativas</BadgeIcon>
-                    <BadgeIcon>Personal del sistema de salud</BadgeIcon>
-                    <BadgeIcon>Comunidades Indígenas o nativas</BadgeIcon>
                   </SimpleGrid>
                 )}
               </AccordionPanel>
