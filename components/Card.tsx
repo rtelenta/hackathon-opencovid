@@ -1,7 +1,7 @@
 import { Box, ChakraComponent } from "@chakra-ui/react";
 
 interface IProps {
-  shadow?: boolean;
+  shadowLarge?: boolean;
 }
 
 const Card: ChakraComponent<"div", IProps> = ({

@@ -24,12 +24,12 @@ const Header: React.FC = () => {
           <IconButton
             colorScheme="gray"
             aria-label="Compartir en facebook"
-            icon={<Icon name="facebook" />}
+            icon={<Icon name="face" />}
           />
           <IconButton
             colorScheme="gray"
             aria-label="Compartir en facebook"
-            icon={<Icon name="facebook" />}
+            icon={<Icon name="insta" />}
           />
           <Box lineHeight="5">
             <Text fontWeight="bold" fontSize="sm">

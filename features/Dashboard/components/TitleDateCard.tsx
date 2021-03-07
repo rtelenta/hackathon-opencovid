@@ -12,7 +12,7 @@ const TitleDateCard: React.FC = () => {
       pb="4"
       w="full"
     >
-      <IconSquare name="facebook" mb="4" />
+      <IconSquare name="confeti" mb="4" />
 
       <Text textAlign="center" fontSize="xs" fontWeight="bold" mb="4">
         ¡Empezamos 2da dosis!

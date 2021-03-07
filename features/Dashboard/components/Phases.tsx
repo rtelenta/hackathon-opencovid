@@ -39,7 +39,8 @@ const Phases: React.FC = () => {
                   rounded="lg"
                   boxShadow={"0 1px 8px rgb(83, 85, 155, 0.176)"}
                   textAlign="center"
-                  p="2"
+                  px="2"
+                  py="4"
                   w="full"
                   lineHeight="4"
                   mt="9"

@@ -1,6 +1,10 @@
 import { Heading, VStack, Text } from "@chakra-ui/react";
 import Sidebar from "components/Sidebar";
+import ComingSoon from "./ComingSoon";
 import DataLargeNumbers from "./DataLargeNumbers";
+import Immunity from "./Immunity";
+import Recovered from "./Recovered";
+import Vaccinated from "./Vaccinated";
 
 const DataColumn: React.FC = () => {
   return (
@@ -52,6 +56,11 @@ const DataColumn: React.FC = () => {
             </>
           }
         />
+
+        <Immunity />
+        <Vaccinated />
+        <Recovered />
+        <ComingSoon />
       </VStack>
     </Sidebar>
   );
