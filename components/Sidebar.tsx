@@ -7,7 +7,7 @@ interface IProps {
 const Sidebar: React.FC<IProps> = ({ children, bgImage = false }) => {
   return (
     <Box
-      pt="14"
+      py="14"
       px="12"
       w="28.5%"
       as="aside"
@@ -16,7 +16,7 @@ const Sidebar: React.FC<IProps> = ({ children, bgImage = false }) => {
         bgImage ? "url(/assets/woman.png) no-repeat center bottom" : undefined
       }
       backgroundSize="70%"
-      pb={bgImage ? "25%" : 0}
+      pb={bgImage ? "25%" : "14"}
     >
       {children}
     </Box>

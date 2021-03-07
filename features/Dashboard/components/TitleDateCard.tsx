@@ -1,7 +1,12 @@
 import { Flex, Text, Box } from "@chakra-ui/layout";
 import IconSquare from "components/IconSquare";
 
-const TitleDateCard: React.FC = () => {
+interface IProps {
+  title: string;
+  date: string;
+}
+
+const TitleDateCard: React.FC<IProps> = ({ title, date }) => {
   return (
     <Flex
       bgGradient="linear(to-t, white, bg.dark)"
@@ -15,7 +20,7 @@ const TitleDateCard: React.FC = () => {
       <IconSquare name="confeti" mb="4" />
 
       <Text textAlign="center" fontSize="xs" fontWeight="bold" mb="4">
-        ¡Empezamos 2da dosis!
+        {title}
       </Text>
 
       <Box
@@ -29,7 +34,7 @@ const TitleDateCard: React.FC = () => {
         textAlign="center"
         p="1"
       >
-        14/05/21
+        {date}
       </Box>
     </Flex>
   );

@@ -19,7 +19,7 @@ import SemiCirclePhases from "./SemiCirclePhases";
 const Phases: React.FC = () => {
   return (
     <Card mt="8">
-      <Accordion defaultIndex={[0, 1, 2]} allowMultiple>
+      <Accordion defaultIndex={[0, 1]} allowMultiple>
         <AccordionItem borderTop="0">
           <h2>
             <AccordionButton>

@@ -3,7 +3,11 @@ import Card from "components/Card";
 import ProgressBar from "components/ProgressBar";
 import React from "react";
 
-const Immunity: React.FC = () => {
+interface IProps {
+  percentage: number;
+}
+
+const Immunity: React.FC<IProps> = ({ percentage }) => {
   return (
     <Card shadowLarge>
       <Heading as="h2" fontWeight="bold" fontSize="xs" mb="2">
@@ -19,7 +23,7 @@ const Immunity: React.FC = () => {
       </Text>
       <Box mt="6">
         <ProgressBar
-          progress={20}
+          progress={percentage}
           info={
             <>
               Deberíamos

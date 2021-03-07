@@ -2,14 +2,9 @@ import { Box } from "@chakra-ui/layout";
 import { Heading, Text } from "@chakra-ui/react";
 import AsyncSelect from "react-select/async";
 import React from "react";
+import getPlaces from "../services/getPlaces";
 
 const Finder: React.FC = () => {
-  const loadOptions = (inputValue, callback) => {
-    setTimeout(() => {
-      callback([]);
-    }, 1000);
-  };
-
   return (
     <Box mt="20">
       <Heading as="h2" color="gray.600" mb="8" fontWeight="bold" fontSize="xl">
@@ -35,7 +30,7 @@ const Finder: React.FC = () => {
           },
         })}
         cacheOptions
-        loadOptions={loadOptions}
+        loadOptions={getPlaces}
         defaultOptions
         onInputChange={(val) => console.log(val)}
         placeholder="Todo el Perú"

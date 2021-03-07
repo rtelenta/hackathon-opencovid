@@ -28,8 +28,8 @@ const Header: React.FC = () => {
           />
           <IconButton
             colorScheme="gray"
-            aria-label="Compartir en facebook"
-            icon={<Icon name="insta" />}
+            aria-label="Compartir por whatsapp"
+            icon={<Icon name="wsp" />}
           />
           <Box lineHeight="5">
             <Text fontWeight="bold" fontSize="sm">

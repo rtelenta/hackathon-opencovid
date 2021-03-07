@@ -1,14 +1,36 @@
 import { HStack, Box } from "@chakra-ui/layout";
-import { Collapse, Heading } from "@chakra-ui/react";
+import { Collapse, Heading, Skeleton } from "@chakra-ui/react";
 import React, { useState } from "react";
-import splitArrayInChunks from "utils/splitArrayInChunks";
+import { useQuery } from "react-query";
+import getNews from "../services/getNews";
 import TitleDateCard from "./TitleDateCard";
 
 const News: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const news = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  const newsChunks = splitArrayInChunks<number>(news, 3);
+  const { data: news, isLoading } = useQuery("news", getNews);
+
+  if (isLoading) {
+    return (
+      <Box>
+        <Heading
+          as="h2"
+          color="gray.600"
+          mb="8"
+          fontWeight="bold"
+          fontSize="xl"
+        >
+          Noticias para celebrar
+        </Heading>
+
+        <HStack spacing="4">
+          <Skeleton w="full" height="140px" />
+          <Skeleton w="full" height="140px" />
+          <Skeleton w="full" height="140px" />
+        </HStack>
+      </Box>
+    );
+  }
 
   return (
     <Box>
@@ -17,24 +39,24 @@ const News: React.FC = () => {
       </Heading>
 
       <Box minH="158px">
-        {newsChunks.map((card, chunkIndex) => (
+        {news.map((card, chunkIndex) => (
           <Collapse
             in={activeSlide === chunkIndex}
             animateOpacity
             key={chunkIndex}
           >
             <HStack spacing="4">
-              {card.map((val) => (
-                <TitleDateCard key={val} />
+              {card.map(({ title, date }) => (
+                <TitleDateCard key={title} title={title} date={date} />
               ))}
             </HStack>
           </Collapse>
         ))}
       </Box>
 
-      {newsChunks.length && (
+      {news.length > 1 && (
         <HStack justifyContent="center" mt="4">
-          {Array.from(Array(newsChunks.length).keys()).map((val) => (
+          {Array.from(Array(news.length).keys()).map((val) => (
             <Box
               as="button"
               w="2"
