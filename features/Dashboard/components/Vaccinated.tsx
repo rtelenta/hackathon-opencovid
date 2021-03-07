@@ -84,6 +84,21 @@ const options = {
   },
 };
 
+const optionsLarge = {
+  legend: {
+    display: false,
+  },
+  scales: {
+    xAxes: [
+      {
+        gridLines: {
+          display: false,
+        },
+      },
+    ],
+  },
+};
+
 const Vaccinated: React.FC = () => {
   const { Line }: any = charts;
   const { data: vaccinated, isLoading } = useQuery("vaccinated", getVaccineDay);
@@ -118,13 +133,13 @@ const Vaccinated: React.FC = () => {
         <Line data={data(vaccinated)} options={options} />
       </Box>
 
-      <Modal isOpen={isOpen} onClose={onClose} size="xl">
+      <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Vacunados diariamante</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Line data={data(vaccinated, true)} options={options} />
+            <Line data={data(vaccinated, true)} options={optionsLarge} />
           </ModalBody>
         </ModalContent>
       </Modal>

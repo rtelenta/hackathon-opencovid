@@ -82,6 +82,20 @@ const options = {
     ],
   },
 };
+const optionsLarge = {
+  legend: {
+    display: false,
+  },
+  scales: {
+    xAxes: [
+      {
+        gridLines: {
+          display: false,
+        },
+      },
+    ],
+  },
+};
 
 const Recovered: React.FC = () => {
   const { Line }: any = charts;
@@ -117,13 +131,13 @@ const Recovered: React.FC = () => {
         <Line data={data(recovered)} options={options} />
       </Box>
 
-      <Modal isOpen={isOpen} onClose={onClose} size="xl">
+      <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Recuperados diariamante</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Line data={data(recovered, true)} options={options} />
+            <Line data={data(recovered, true)} options={optionsLarge} />
           </ModalBody>
         </ModalContent>
       </Modal>
