@@ -16,7 +16,7 @@ const DataLargeNumbers: React.FC<IProps> = ({
   tagInfo,
 }) => {
   return (
-    <Card shadow>
+    <Card shadowLarge>
       <Flex alignItems="center">
         <Flex
           flexDirection="column"

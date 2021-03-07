@@ -6,13 +6,13 @@ interface IProps {
 
 const Card: ChakraComponent<"div", IProps> = ({
   children,
-  shadow = false,
+  shadowLarge = false,
   ...rest
 }) => {
   return (
     <Box
       rounded="2xl"
-      boxShadow={shadow ? "0 9px 24px rgba(205, 213, 223, 0.56)" : "none"}
+      boxShadow={shadowLarge ? "0 9px 24px rgba(205, 213, 223, 0.56)" : "none"}
       bg="white"
       w="full"
       p="6"
