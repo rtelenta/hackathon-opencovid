@@ -3,7 +3,7 @@ import Icon from "./Icon";
 
 const Header: React.FC = () => {
   return (
-    <Box bg="white" as="header">
+    <Box bg="white" as="header" borderBottom="1px solid" borderColor="gray.200">
       <Flex
         mx="auto"
         w="full"
