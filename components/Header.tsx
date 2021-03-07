@@ -22,14 +22,20 @@ const Header: React.FC = () => {
 
         <HStack spacing="4">
           <IconButton
+            as="a"
             colorScheme="gray"
             aria-label="Compartir en facebook"
             icon={<Icon name="face" />}
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fopencovid.vercel.app%2F"
+            target="_blank"
           />
           <IconButton
             colorScheme="gray"
             aria-label="Compartir por whatsapp"
             icon={<Icon name="wsp" />}
+            as="a"
+            href="https://api.whatsapp.com/send?text=https://opencovid.vercel.app/"
+            target="_blank"
           />
           <Box lineHeight="5">
             <Text fontWeight="bold" fontSize="sm">

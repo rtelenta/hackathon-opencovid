@@ -73,7 +73,7 @@ const Phases: React.FC<IProps> = ({ search }) => {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb="9">
-                {percentFisrt && percentSecond ? (
+                {percentFisrt || percentSecond ? (
                   <Flex>
                     <Flex flexDirection="column" alignItems="flex-start">
                       <SemiCirclePhases
