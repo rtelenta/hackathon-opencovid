@@ -36,7 +36,7 @@ const Phases: React.FC = () => {
 
                 <Box
                   background="white"
-                  rounded="2xl"
+                  rounded="lg"
                   boxShadow={"0 1px 8px rgb(83, 85, 155, 0.176)"}
                   textAlign="center"
                   p="2"
@@ -50,7 +50,7 @@ const Phases: React.FC = () => {
                   <Text fontSize="xs">Vacunados con 2 dosis</Text>
                 </Box>
               </Flex>
-              <Box ml="8" bg="gray.100" rounded="lg" p="4">
+              <Box ml="8" bg="#F9FAFD" rounded="lg" p="4">
                 <VStack spacing="3" alignItems="flex-start">
                   <Text fontSize="xs" display="flex" alignItems="center">
                     <Icon size={14} name="supervised_user_circle" mr="2" />{" "}

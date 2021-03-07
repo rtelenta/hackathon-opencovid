@@ -39,6 +39,16 @@ const SemiCirclePhases: React.FC<IProps> = ({ dosis1, dosis2 }) => {
             1era dosis
           </Text>
         </Box>
+
+        <Box
+          pos="absolute"
+          bottom="0"
+          w="60px"
+          bg="gray.100"
+          left="50%"
+          transform="translateX(-50%)"
+          h="px"
+        />
       </Box>
       <Box pos="relative">
         <SemiCircleProgressBar

@@ -4,7 +4,7 @@ import React from "react";
 
 const BadgeIcon: React.FC = ({ children }) => {
   return (
-    <Flex fontSize="xs" alignItems="center" bg="gray.100" rounded="lg" p="4">
+    <Flex fontSize="xs" alignItems="center" bg="#F9FAFD" rounded="lg" p="4">
       <Icon size={14} name="supervised_user_circle" mr="2" /> {children}
     </Flex>
   );

@@ -26,6 +26,14 @@ const Finder: React.FC = () => {
             padding: "6px 8px",
           }),
         }}
+        theme={(theme) => ({
+          ...theme,
+          borderRadius: 0,
+          colors: {
+            ...theme.colors,
+            primary: "#0BC5EA",
+          },
+        })}
         cacheOptions
         loadOptions={loadOptions}
         defaultOptions
